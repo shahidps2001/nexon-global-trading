@@ -16,7 +16,7 @@ function ViewCategories() {
 
   const fetchCategories = async () => {
     try {
-      const res = await axios.get('https://nexon-global-trading-backend.onrender.com/api/categories')
+      const res = await axios.get('https://nexon-global-trading-backend1.onrender.com/api/categories')
       setCategories(res.data)
     } catch (error) {
       console.log(error)
@@ -28,7 +28,7 @@ function ViewCategories() {
     if (!window.confirm('Are you sure you want to delete this category?')) return
     try {
       const token = localStorage.getItem('adminToken')
-      await axios.delete(`https://nexon-global-trading-backend.onrender.com/api/categories/${id}`, {
+      await axios.delete(`https://nexon-global-trading-backend1.onrender.com/api/categories/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       })
       fetchCategories()
@@ -82,7 +82,7 @@ function ViewCategories() {
               <div key={category._id} className='admin-card'>
                 <div className='admin-card-img'>
                   <img
-                    src={`https://nexon-global-trading-backend.onrender.com/uploads/${category.image}`}
+                    src={`https://nexon-global-trading-backend1.onrender.com/uploads/${category.image}`}
                     alt={category.name}
                   />
                 </div>

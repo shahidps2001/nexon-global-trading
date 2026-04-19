@@ -15,11 +15,11 @@ function EditCategory() {
   useEffect(() => {
     const fetchCategory = async () => {
       try {
-        const res = await axios.get('https://nexon-global-trading-backend.onrender.com/api/categories')
+        const res = await axios.get('https://nexon-global-trading-backend1.onrender.com/api/categories')
         const category = res.data.find(c => c._id === id)
         if (category) {
           setName(category.name)
-          setPreview(`https://nexon-global-trading-backend.onrender.com/uploads/${category.image}`)
+          setPreview(`https://nexon-global-trading-backend1.onrender.com/uploads/${category.image}`)
         }
       } catch (error) {
         console.log(error)
@@ -43,7 +43,7 @@ function EditCategory() {
       formData.append('name', name)
       if (image) formData.append('image', image)
       await axios.put(
-        `https://nexon-global-trading-backend.onrender.com/api/categories/${id}`,
+        `https://nexon-global-trading-backend1.onrender.com/api/categories/${id}`,
         formData,
         {
           headers: {

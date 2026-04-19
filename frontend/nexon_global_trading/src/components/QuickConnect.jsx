@@ -23,7 +23,7 @@ function QuickConnect() {
     e.preventDefault()
     setLoading(true)
     try {
-      await axios.post('https://nexon-global-trading-backend.onrender.com/api/enquiry', formData)
+      await axios.post('https://nexon-global-trading-backend1.onrender.com/api/enquiry', formData)
       setSuccess(true)
       setFormData({
         name: '',

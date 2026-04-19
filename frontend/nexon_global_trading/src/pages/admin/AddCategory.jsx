@@ -30,7 +30,7 @@ function AddCategory() {
       const formData = new FormData()
       formData.append('name', name)
       formData.append('image', image)
-      await axios.post('https://nexon-global-trading-backend.onrender.com/api/categories', formData, {
+      await axios.post('https://nexon-global-trading-backend1.onrender.com/api/categories', formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-type': 'multipart/form-data'

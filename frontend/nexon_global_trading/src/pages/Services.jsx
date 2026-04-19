@@ -9,7 +9,7 @@ function Services() {
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const res = await axios.get('https://nexon-global-trading-backend.onrender.com/api/services')
+        const res = await axios.get('https://nexon-global-trading-backend1.onrender.com/api/services')
         setServices(res.data)
       } catch (error) {
         console.log(error)
@@ -52,7 +52,7 @@ function Services() {
 
                 <div className='services-page-card-img'>
                   <img
-                    src={`https://nexon-global-trading-backend.onrender.com/uploads/${service.image}`}
+                    src={`https://nexon-global-trading-backend1.onrender.com/uploads/${service.image}`}
                     alt={service.name}
                   />
                 </div>

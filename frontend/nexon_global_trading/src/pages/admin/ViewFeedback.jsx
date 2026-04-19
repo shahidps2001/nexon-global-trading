@@ -18,7 +18,7 @@ function ViewFeedback() {
     try {
       const token = localStorage.getItem('adminToken')
       const res = await axios.get(
-        'https://nexon-global-trading-backend.onrender.com/api/feedback',
+        'https://nexon-global-trading-backend1.onrender.com/api/feedback',
         { headers: { Authorization: `Bearer ${token}` } }
       )
       setFeedback(res.data)
@@ -33,7 +33,7 @@ function ViewFeedback() {
     try {
       const token = localStorage.getItem('adminToken')
       await axios.delete(
-        `https://nexon-global-trading-backend.onrender.com/api/feedback/${id}`,
+        `https://nexon-global-trading-backend1.onrender.com/api/feedback/${id}`,
         { headers: { Authorization: `Bearer ${token}` } }
       )
       fetchFeedback()

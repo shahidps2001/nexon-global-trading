@@ -24,15 +24,15 @@ function EditProduct() {
   const fetchData = async () => {
     try {
       const [catRes, prodRes] = await Promise.all([
-        axios.get('https://nexon-global-trading-backend.onrender.com/api/categories'),
-        axios.get(`https://nexon-global-trading-backend.onrender.com/api/products/${id}`)
+        axios.get('https://nexon-global-trading-backend1.onrender.com/api/categories'),
+        axios.get(`https://nexon-global-trading-backend1.onrender.com/api/products/${id}`)
       ])
       setCategories(catRes.data)
       const product = prodRes.data
       setName(product.name)
       setDescription(product.description)
       setCategory(product.category._id)
-      setPreview(`https://nexon-global-trading-backend.onrender.com/uploads/${product.image}`)
+      setPreview(`https://nexon-global-trading-backend1.onrender.com/uploads/${product.image}`)
     } catch (error) {
       console.log(error)
     }
@@ -55,7 +55,7 @@ function EditProduct() {
       formData.append('category', category)
       if (image) formData.append('image', image)
       await axios.put(
-        `https://nexon-global-trading-backend.onrender.com/api/products/${id}`,
+        `https://nexon-global-trading-backend1.onrender.com/api/products/${id}`,
         formData,
         {
           headers: {

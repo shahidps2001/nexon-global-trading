@@ -13,7 +13,7 @@ function ProductHighlights() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await axios.get('https://nexon-global-trading-backend.onrender.com/api/products')
+        const res = await axios.get('https://nexon-global-trading-backend1.onrender.com/api/products')
         setProducts(res.data)
       } catch (error) {
         console.log(error)
@@ -97,7 +97,7 @@ function ProductHighlights() {
               >
                 <div className='ph-card-img'>
                   <img
-                    src={`https://nexon-global-trading-backend.onrender.com/uploads/${product.image}`}
+                    src={`https://nexon-global-trading-backend1.onrender.com/uploads/${product.image}`}
                     alt={product.name}
                   />
                 </div>
@@ -119,7 +119,7 @@ function ProductHighlights() {
               >
                 <div className='ph-card-img'>
                   <img
-                    src={`https://nexon-global-trading-backend.onrender.com/uploads/${product.image}`}
+                    src={`https://nexon-global-trading-backend1.onrender.com/uploads/${product.image}`}
                     alt={product.name}
                   />
                 </div>

@@ -37,7 +37,7 @@ function AddService() {
       formData.append('description', description)
       formData.append('image', image)
       await axios.post(
-        'https://nexon-global-trading-backend.onrender.com/api/services',
+        'https://nexon-global-trading-backend1.onrender.com/api/services',
         formData,
         {
           headers: {
