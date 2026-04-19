@@ -1,0 +1,527 @@
+.admin-page {
+  display: flex;
+  min-height: 100vh;
+  background: #0A1628;
+}
+
+/* SIDEBAR */
+.admin-page-sidebar {
+  width: 260px;
+  min-height: 100vh;
+  background: #112240;
+  border-right: 1px solid rgba(201, 168, 76, 0.15);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow-y: auto;
+  padding: 1.5rem 0;
+  z-index: 100;
+}
+
+.admin-sidebar-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #C9A84C;
+  text-decoration: none;
+  padding: 0 1.5rem 1.5rem;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.admin-sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.75rem 1.5rem;
+  color: #8A9BB0;
+  text-decoration: none;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.85rem;
+  transition: all 0.3s;
+  border-left: 2px solid transparent;
+}
+
+.admin-sidebar-link:hover {
+  background: rgba(201, 168, 76, 0.05);
+  color: #E8EAF0;
+  border-left-color: #C9A84C;
+}
+
+.admin-sidebar-link.active {
+  background: rgba(201, 168, 76, 0.08);
+  color: #C9A84C;
+  border-left-color: #C9A84C;
+}
+
+.admin-sidebar-logout {
+  margin: auto 1.5rem 1.5rem;
+  padding: 0.75rem;
+  background: rgba(192, 57, 43, 0.1);
+  border: 1px solid rgba(192, 57, 43, 0.3);
+  border-radius: 2px;
+  color: #E74C3C;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: auto;
+}
+
+.admin-sidebar-logout:hover {
+  background: rgba(192, 57, 43, 0.2);
+}
+
+/* MAIN */
+.admin-page-main {
+  flex: 1;
+  margin-left: 260px;
+  padding: 2.5rem;
+}
+
+/* HEADER */
+.admin-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+}
+
+.admin-page-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #FAFAF8;
+}
+
+.admin-back-btn {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: #8A9BB0;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.admin-back-btn:hover {
+  color: #C9A84C;
+}
+
+.admin-add-btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: #C9A84C;
+  color: #0A1628;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.admin-add-btn:hover {
+  background: #E8C97A;
+}
+
+/* GRID */
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* CARD */
+.admin-card {
+  background: #112240;
+  border: 1px solid rgba(201, 168, 76, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.admin-card:hover {
+  border-color: rgba(201, 168, 76, 0.3);
+}
+
+.admin-card-img {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+}
+
+.admin-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.admin-card-info {
+  padding: 1rem;
+}
+
+.admin-card-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #E8EAF0;
+  margin-bottom: 0.8rem;
+}
+
+.admin-card-category {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #C9A84C;
+  margin-bottom: 0.4rem;
+}
+
+.admin-card-desc {
+  font-size: 0.8rem;
+  color: #8A9BB0;
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+}
+
+.admin-card-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.admin-edit-btn {
+  flex: 1;
+  padding: 0.5rem;
+  background: rgba(201, 168, 76, 0.1);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 2px;
+  color: #C9A84C;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.admin-edit-btn:hover {
+  background: rgba(201, 168, 76, 0.2);
+}
+
+.admin-delete-btn {
+  flex: 1;
+  padding: 0.5rem;
+  background: rgba(192, 57, 43, 0.1);
+  border: 1px solid rgba(192, 57, 43, 0.2);
+  border-radius: 2px;
+  color: #E74C3C;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.admin-delete-btn:hover {
+  background: rgba(192, 57, 43, 0.2);
+}
+
+/* FORM */
+.admin-form-wrap {
+  max-width: 600px;
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: #112240;
+  border: 1px solid rgba(201, 168, 76, 0.1);
+  border-radius: 4px;
+  padding: 2rem;
+}
+
+.admin-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.admin-form-field label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #C9A84C;
+}
+
+.admin-form-field input,
+.admin-form-field textarea,
+.admin-form-field select {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-radius: 2px;
+  padding: 0.85rem 1rem;
+  color: #E8EAF0;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.3s;
+  width: 100%;
+}
+
+.admin-form-field input:focus,
+.admin-form-field textarea:focus,
+.admin-form-field select:focus {
+  border-color: #C9A84C;
+}
+
+.admin-form-field input::placeholder,
+.admin-form-field textarea::placeholder {
+  color: rgba(138, 155, 176, 0.5);
+}
+
+.admin-form-field select option {
+  background: #112240;
+  color: #E8EAF0;
+}
+
+.admin-form-field textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* IMAGE UPLOAD */
+.admin-image-upload input[type='file'] {
+  display: none;
+}
+
+.admin-image-label {
+  display: block;
+  cursor: pointer;
+  border: 2px dashed rgba(201, 168, 76, 0.3);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+
+.admin-image-label:hover {
+  border-color: #C9A84C;
+}
+
+.admin-image-preview {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.admin-image-placeholder {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  color: #8A9BB0;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+}
+
+.admin-image-placeholder-icon {
+  font-size: 2.5rem;
+}
+
+/* SUBMIT */
+.admin-submit-btn {
+  padding: 1rem 2rem;
+  background: #C9A84C;
+  color: #0A1628;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.admin-submit-btn:hover {
+  background: #E8C97A;
+}
+
+.admin-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ERROR */
+.admin-error {
+  background: rgba(192, 57, 43, 0.1);
+  border: 1px solid rgba(192, 57, 43, 0.3);
+  border-radius: 2px;
+  padding: 0.8rem 1rem;
+  font-size: 0.85rem;
+  color: #E74C3C;
+}
+
+/* LOADING / EMPTY */
+.admin-loading {
+  text-align: center;
+  padding: 4rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  color: #8A9BB0;
+}
+
+.admin-empty {
+  text-align: center;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.admin-empty-icon {
+  font-size: 4rem;
+}
+
+.admin-empty-text {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  color: #8A9BB0;
+}
+
+/* TABLE for enquiries and feedback */
+.admin-table-wrap {
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #C9A84C;
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+  background: #112240;
+}
+
+.admin-table td {
+  padding: 1rem;
+  font-size: 0.88rem;
+  color: #E8EAF0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-weight: 300;
+  vertical-align: top;
+}
+
+.admin-table tr:hover td {
+  background: rgba(201, 168, 76, 0.02);
+}
+
+.admin-table .admin-delete-btn {
+  padding: 0.4rem 0.8rem;
+  width: auto;
+  flex: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .admin-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-page-sidebar {
+    display: none;
+  }
+  .admin-page-main {
+    margin-left: 0;
+    padding: 1.5rem;
+  }
+  .admin-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* CATEGORY TABS */
+.admin-category-tabs {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+}
+
+.admin-category-tab {
+  padding: 0.5rem 1.2rem;
+  background: #112240;
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-radius: 2px;
+  color: #8A9BB0;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.admin-category-tab:hover {
+  border-color: rgba(201, 168, 76, 0.3);
+  color: #E8EAF0;
+}
+
+.admin-category-tab.active {
+  background: #C9A84C;
+  border-color: #C9A84C;
+  color: #0A1628;
+}
+
+
+/* COUNT BADGE */
+.admin-count {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: #8A9BB0;
+  background: #112240;
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  padding: 0.4rem 1rem;
+  border-radius: 2px;
+}

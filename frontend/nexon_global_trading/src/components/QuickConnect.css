@@ -1,0 +1,221 @@
+.qc-button {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #0A1628;
+    background: #C9A84C;
+    border: none;
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+    box-shadow: 4px 0 20px rgba(201, 168, 76, 0.3);
+    transition: all 0.3s;
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.qc-button:hover {
+    background: #E8C97A;
+    padding-right: 1.4rem;
+}
+
+.qc-button-icon {
+    font-size:  1rem;
+    writing-mode: horizontal-tb;
+    transform: rotate(180deg);
+}
+
+.qc-button-text {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+}
+
+.qc-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    backdrop-filter: blur(3px);
+}
+
+.qc-panel {
+    position: fixed;
+    left: -420px;
+    top: 0;
+    bottom: 0;
+    width: 420px;
+    background: #112240;
+    z-index: 1002;
+    overflow-y:  auto;
+    transition: left 0.4s ease;
+    border-right: 1px solid rgba(201, 168, 76, 0.2);
+    box-shadow: 10px 0 40px rgba(0,0,0,0.4);
+}
+
+.qc-panel-open {
+    left: 0;
+}
+
+.qc-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 2rem;
+    background: #0A1628;
+    border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+}
+
+.qc-header-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight:700;
+    color: #C9A84C;
+    margin-bottom: 4px;
+}
+
+.qc-header-sub {
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.8rem;
+    color: #8A9BB0;
+}
+
+.qc-close {
+    background: none;
+    border: none;
+    color: #8A9BB0;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 4px;
+    transition: color 0.3s;
+}
+
+.qc-close:hover {
+    color: #C9A84C;
+}
+
+.qc-form {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.qc-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.qc-field label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    color: #C9A84C;
+}
+
+.qc-field input,
+.qc-field textarea {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 2px;
+    padding: 0.8rem 1rem;
+    color: #E8EAF0;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.3s;
+    width: 100%;
+}
+
+.qc-field input:focus,
+.qc-field textarea:focus {
+    border-color: #C9A84C;
+    background: rgba(201,168,76, 0.03);
+}
+
+.qc-field input::placeholder,
+.qc-field textarea::placeholder {
+    color: rgba(138, 155, 176, 0.5);
+}
+
+.qc-field textarea {
+    resize: vertical;
+}
+
+.qc-submit {
+    width: 100%;
+    padding: 1rem;
+    background: #C9A84C;
+    color: #0A1628;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 0.5rem;
+}
+
+.qc-submit:hover {
+    background: #E8C97A;
+}
+
+.qc-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.qc-success {
+    padding: 4rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.qc-success-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(42, 122, 79, 0.15);
+    border: 2px solid #2A7A4F;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #2A7A4F;
+}
+
+.qc-success-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #E8EAF0;
+}
+
+.qc-success-text {
+    font-size: 0.9rem;
+    color: #8A9BB0;
+    line-height: 1.6;
+}
+
+@media (max-width: 480px) {
+    .qc-panel {
+        width: 100%;
+        left: -100%;
+    }
+}
