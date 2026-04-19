@@ -18,7 +18,7 @@ function ViewEnquiries() {
     try {
       const token = localStorage.getItem('adminToken')
       const res = await axios.get(
-        'http://localhost:5000/api/enquiry',
+        'https://nexon-global-trading-backend.onrender.com/api/enquiry',
         { headers: { Authorization: `Bearer ${token}` } }
       )
       setEnquiries(res.data)
@@ -33,7 +33,7 @@ function ViewEnquiries() {
     try {
       const token = localStorage.getItem('adminToken')
       await axios.delete(
-        `http://localhost:5000/api/enquiry/${id}`,
+        `https://nexon-global-trading-backend.onrender.com/api/enquiry/${id}`,
         { headers: { Authorization: `Bearer ${token}` } }
       )
       fetchEnquiries()

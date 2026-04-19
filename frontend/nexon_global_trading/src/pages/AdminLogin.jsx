@@ -23,7 +23,7 @@ function AdminLogin() {
     e.preventDefault()
     setLoading(true)
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', formData)
+      const res = await axios.post('https://nexon-global-trading-backend.onrender.com/api/auth/login', formData)
 
       if (res.data.success) {
         localStorage.setItem('adminToken', res.data.token)

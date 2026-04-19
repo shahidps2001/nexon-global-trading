@@ -23,7 +23,7 @@ function AddProduct() {
 
   const fetchCategories = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/categories')
+      const res = await axios.get('https://nexon-global-trading-backend.onrender.com/api/categories')
       setCategories(res.data)
     }
     catch(error) {
@@ -57,7 +57,7 @@ function AddProduct() {
         formData.append('category', category)
         formData.append('image', image)
         await axios.post(
-          'http://localhost:5000/api/products',
+          'https://nexon-global-trading-backend.onrender.com/api/products',
           formData,
           {
             headers: {

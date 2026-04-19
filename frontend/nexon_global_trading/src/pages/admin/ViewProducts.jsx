@@ -24,7 +24,7 @@ function ViewProducts() {
 
   const fetchCategories = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/categories')
+      const res = await axios.get('https://nexon-global-trading-backend.onrender.com/api/categories')
       setCategories(res.data)
       if (res.data.length > 0) {
         setSelectedCategory(res.data[0]._id)
@@ -38,7 +38,7 @@ function ViewProducts() {
   const fetchProducts = async (categoryId) => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/products/category/${categoryId}`
+        `https://nexon-global-trading-backend.onrender.com/api/products/category/${categoryId}`
       )
       setProducts(res.data)
     } catch (error) {
@@ -51,7 +51,7 @@ function ViewProducts() {
     try {
       const token = localStorage.getItem('adminToken')
       await axios.delete(
-        `http://localhost:5000/api/products/${id}`,
+        `https://nexon-global-trading-backend.onrender.com/api/products/${id}`,
         { headers: { Authorization: `Bearer ${token}` } }
       )
       fetchProducts(selectedCategory)
@@ -138,7 +138,7 @@ function ViewProducts() {
                   <div key={product._id} className='admin-card'>
                     <div className='admin-card-img'>
                       <img
-                        src={`http://localhost:5000/uploads/${product.image}`}
+                        src={`https://nexon-global-trading-backend.onrender.com/uploads/${product.image}`}
                         alt={product.name}
                       />
                     </div>

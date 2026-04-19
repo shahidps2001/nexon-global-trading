@@ -16,7 +16,7 @@ function ViewServices() {
 
   const fetchServices = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/services')
+      const res = await axios.get('https://nexon-global-trading-backend.onrender.com/api/services')
       setServices(res.data)
     } catch (error) {
       console.log(error)
@@ -29,7 +29,7 @@ function ViewServices() {
     try {
       const token = localStorage.getItem('adminToken')
       await axios.delete(
-        `http://localhost:5000/api/services/${id}`,
+        `https://nexon-global-trading-backend.onrender.com/api/services/${id}`,
         { headers: { Authorization: `Bearer ${token}` } }
       )
       fetchServices()
@@ -83,7 +83,7 @@ function ViewServices() {
               <div key={service._id} className='admin-card'>
                 <div className='admin-card-img'>
                   <img
-                    src={`http://localhost:5000/uploads/${service.image}`}
+                    src={`https://nexon-global-trading-backend.onrender.com/uploads/${service.image}`}
                     alt={service.name}
                   />
                 </div>
