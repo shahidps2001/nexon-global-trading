@@ -82,7 +82,7 @@ function ViewCategories() {
               <div key={category._id} className='admin-card'>
                 <div className='admin-card-img'>
                   <img
-                    src={product.image}
+                    src={category.image}
                     alt={category.name}
                   />
                 </div>
