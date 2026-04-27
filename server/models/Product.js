@@ -20,7 +20,11 @@ const productSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Category',
         require: true
-    }
+    },
+    price: {
+    type: Number,
+    default: 0
+  }
     }, { Timestamp: true}
 )
 module.exports = mongoose.model('Product', productSchema);

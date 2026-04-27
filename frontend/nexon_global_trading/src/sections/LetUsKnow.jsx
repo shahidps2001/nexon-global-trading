@@ -21,7 +21,7 @@ function LetUsKnow() {
 
 
     try {
-      await axios.post('https://nexon-global-trading-backend1.onrender.com/api/feedback', formData)
+      await axios.post('http://localhost:5000/api/feedback', formData)
       setSuccess(true)
       setFormData({ email: '', message: '' })
         setTimeout(() => setSuccess(false), 4000)

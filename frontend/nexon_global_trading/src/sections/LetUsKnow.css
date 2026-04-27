@@ -208,3 +208,29 @@
     gap: 3rem;
   }
 }
+
+
+/* MOBILE LAYOUT */
+
+
+@media (max-width: 768px) {
+  .luk-section {
+    padding: 4rem 1.5rem;
+  }
+  .luk-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .luk-form-wrap {
+    padding: 1.5rem;
+  }
+  .luk-features {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .luk-feature {
+    flex: 1;
+    min-width: 130px;
+  }
+}

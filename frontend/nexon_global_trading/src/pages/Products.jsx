@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import PriceCalculator from '../components/PriceCalculator'
 import './Products.css'
 
 function Products() {
@@ -8,13 +9,15 @@ function Products() {
   const [selectedCategory, setSelectedCategory] = useState(null)
   const [loadingCats, setLoadingCats] = useState(true)
   const [loadingProds, setLoadingProds] = useState(false)
+  const [selectedProduct, setSelectedProduct] = useState(null)
 
-  // Fetch categories on page load
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const res = await axios.get('https://nexon-global-trading-backend1.onrender.com/api/categories')
-        setCategories(res.data)
+        const res = await axios.get(
+          `http://localhost:5000/api/categories`
+        )
+        setCategories(Array.isArray(res.data) ? res.data : [])
         if (res.data.length > 0) {
           setSelectedCategory(res.data[0]._id)
         }
@@ -26,14 +29,13 @@ function Products() {
     fetchCategories()
   }, [])
 
-  // Fetch products when selectedCategory changes
   useEffect(() => {
     if (!selectedCategory) return
     const fetchProducts = async () => {
       setLoadingProds(true)
       try {
         const res = await axios.get(
-          `https://nexon-global-trading-backend1.onrender.com/api/products/category/${selectedCategory}`
+          `http://localhost:5000/api/products/category/${selectedCategory}`
         )
         setProducts(res.data)
       } catch (error) {
@@ -89,7 +91,7 @@ function Products() {
                   onClick={() => handleCategoryClick(category._id)}
                 >
                   <img
-                    src={`https://nexon-global-trading-backend1.onrender.com/uploads/${category.image}`}
+                    src={product.image}
                     alt={category.name}
                   />
                   <span>{category.name}</span>
@@ -104,9 +106,7 @@ function Products() {
 
             {/* PRODUCTS GRID */}
             {loadingProds ? (
-              <div className='products-loading'>
-                Loading products...
-              </div>
+              <div className='products-loading'>Loading products...</div>
             ) : products.length === 0 ? (
               <div className='products-cat-empty'>
                 No products in this category yet.
@@ -117,7 +117,7 @@ function Products() {
                   <div key={product._id} className='product-card'>
                     <div className='product-card-img'>
                       <img
-                        src={`https://nexon-global-trading-backend1.onrender.com/uploads/${product.image}`}
+                        src={product.image}
                         alt={product.name}
                       />
                     </div>
@@ -131,6 +131,19 @@ function Products() {
                       <div className='product-card-desc'>
                         {product.description}
                       </div>
+                      <div className='product-card-footer'>
+                        <div className='product-card-price'>
+                          {product.price > 0
+                            ? `SAR ${product.price.toFixed(2)} / piece`
+                            : 'Price on request'}
+                        </div>
+                        <button
+                          className='product-calc-btn'
+                          onClick={() => setSelectedProduct(product)}
+                        >
+                          🧮 Calculate
+                        </button>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -140,6 +153,14 @@ function Products() {
         )}
 
       </div>
+
+      {/* PRICE CALCULATOR POPUP */}
+      {selectedProduct && (
+        <PriceCalculator
+          product={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+        />
+      )}
 
     </div>
   )

@@ -16,9 +16,12 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: "https://nexon-global-trading-frontend1.onrender.com",
+  origin: [
+    'http://localhost:5173',
+    'https://nexon-global-trading-frontend1.onrender.com'
+  ],
   credentials: true
-}));
+}))
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -31,6 +34,7 @@ app.use('/api/products', require('./routes/products'));
 app.use('/api/services', require('./routes/services'));
 app.use('/api/enquiry', require("./routes/enquiry"));
 app.use('/api/feedback',require("./routes/feedback"));
+app.use('/api/price-enquiry', require('./routes/priceEnquiry'))
 
 //test route
 app.get('/', (req,res) => {

@@ -1,0 +1,410 @@
+/* OVERLAY */
+.calc-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 2000;
+  backdrop-filter: blur(4px);
+}
+
+/* POPUP */
+.calc-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 520px;
+  max-height: 90vh;
+  background: #112240;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 8px;
+  z-index: 2001;
+  overflow-y: auto;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+/* HEADER */
+.calc-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  background: #0A1628;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.calc-header-tag {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #C9A84C;
+  margin-bottom: 4px;
+}
+
+.calc-header-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #FAFAF8;
+}
+
+.calc-close {
+  background: none;
+  border: none;
+  color: #8A9BB0;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: color 0.3s;
+  line-height: 1;
+}
+
+.calc-close:hover {
+  color: #C9A84C;
+}
+
+/* BODY */
+.calc-body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* PRODUCT INFO */
+.calc-product-info {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(201, 168, 76, 0.1);
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.calc-product-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.calc-product-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #E8EAF0;
+  margin-bottom: 0.2rem;
+}
+
+.calc-product-category {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #C9A84C;
+  margin-bottom: 0.4rem;
+}
+
+.calc-product-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #C9A84C;
+}
+
+.calc-product-price span {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #8A9BB0;
+}
+
+/* QUANTITY */
+.calc-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #C9A84C;
+  margin-bottom: 0.8rem;
+}
+
+.calc-quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  width: fit-content;
+}
+
+.calc-qty-btn {
+  width: 44px;
+  height: 44px;
+  background: rgba(201, 168, 76, 0.1);
+  border: none;
+  color: #C9A84C;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calc-qty-btn:hover {
+  background: rgba(201, 168, 76, 0.2);
+}
+
+.calc-qty-input {
+  width: 80px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.03);
+  border: none;
+  border-left: 1px solid rgba(201, 168, 76, 0.2);
+  border-right: 1px solid rgba(201, 168, 76, 0.2);
+  color: #E8EAF0;
+  font-family: 'Barlow', sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  outline: none;
+}
+
+/* BREAKDOWN */
+.calc-breakdown {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(201, 168, 76, 0.1);
+  border-radius: 4px;
+  padding: 1.2rem;
+}
+
+.calc-breakdown-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #C9A84C;
+  margin-bottom: 1rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+}
+
+.calc-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #8A9BB0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.calc-row span:last-child {
+  color: #E8EAF0;
+  font-weight: 500;
+}
+
+.calc-row.total {
+  margin-top: 0.5rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(201, 168, 76, 0.2);
+  border-bottom: none;
+  font-weight: 600;
+}
+
+.calc-row.total span {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: #C9A84C !important;
+}
+
+/* NO PRICE */
+.calc-no-price {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(201, 168, 76, 0.05);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-radius: 4px;
+  font-size: 0.88rem;
+  color: #8A9BB0;
+}
+
+/* SUMMARY */
+.calc-summary {
+  background: rgba(201, 168, 76, 0.04);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-radius: 4px;
+  padding: 1.2rem;
+}
+
+.calc-summary-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #C9A84C;
+  margin-bottom: 1rem;
+}
+
+/* FORM */
+.calc-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.calc-form-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #C9A84C;
+}
+
+.calc-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.calc-field label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #8A9BB0;
+}
+
+.calc-field input {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-radius: 2px;
+  padding: 0.8rem 1rem;
+  color: #E8EAF0;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.3s;
+  width: 100%;
+}
+
+.calc-field input:focus {
+  border-color: #C9A84C;
+}
+
+.calc-field input::placeholder {
+  color: rgba(138, 155, 176, 0.5);
+}
+
+/* BUTTONS */
+.calc-form-btns {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.calc-btn {
+  flex: 1;
+  padding: 0.9rem 1.5rem;
+  background: #C9A84C;
+  color: #0A1628;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+.calc-btn:hover {
+  background: #E8C97A;
+}
+
+.calc-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.calc-btn-outline {
+  flex: 1;
+  padding: 0.9rem 1.5rem;
+  background: transparent;
+  color: #C9A84C;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.calc-btn-outline:hover {
+  border-color: #C9A84C;
+  background: rgba(201, 168, 76, 0.05);
+}
+
+/* SUCCESS */
+.calc-success {
+  padding: 3rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.calc-success-icon {
+  width: 70px;
+  height: 70px;
+  background: rgba(42, 122, 79, 0.15);
+  border: 2px solid #2A7A4F;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #2A7A4F;
+}
+
+.calc-success-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #E8EAF0;
+}
+
+.calc-success-text {
+  font-size: 0.9rem;
+  color: #8A9BB0;
+  line-height: 1.6;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .calc-popup {
+    width: 95%;
+    max-height: 95vh;
+  }
+  .calc-header {
+    padding: 1.2rem 1.5rem;
+  }
+  .calc-body {
+    padding: 1.5rem;
+  }
+}

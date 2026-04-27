@@ -4,6 +4,7 @@ import axios from 'axios'
 import './AdminPages.css'
 
 function EditProduct() {
+  const [price, setPrice] = useState('')
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
   const [category, setCategory] = useState('')
@@ -24,15 +25,16 @@ function EditProduct() {
   const fetchData = async () => {
     try {
       const [catRes, prodRes] = await Promise.all([
-        axios.get('https://nexon-global-trading-backend1.onrender.com/api/categories'),
-        axios.get(`https://nexon-global-trading-backend1.onrender.com/api/products/${id}`)
+        axios.get('http://localhost:5000/api/categories'),
+        axios.get(`http://localhost:5000/api/products/${id}`)
       ])
       setCategories(catRes.data)
       const product = prodRes.data
       setName(product.name)
       setDescription(product.description)
       setCategory(product.category._id)
-      setPreview(`https://nexon-global-trading-backend1.onrender.com/uploads/${product.image}`)
+      setPrice(product.price || 0)
+      setPreview(`http://localhost:5000/uploads/${product.image}`)
     } catch (error) {
       console.log(error)
     }
@@ -53,9 +55,10 @@ function EditProduct() {
       formData.append('name', name)
       formData.append('description', description)
       formData.append('category', category)
+      formData.append('price', price)
       if (image) formData.append('image', image)
       await axios.put(
-        `https://nexon-global-trading-backend1.onrender.com/api/products/${id}`,
+        `http://localhost:5000/api/products/${id}`,
         formData,
         {
           headers: {
@@ -166,6 +169,14 @@ function EditProduct() {
                   )}
                 </label>
               </div>
+            </div>
+
+            <div className='admin-form-field'>
+              <label>Price (SAR per piece) *</label>
+              <input
+                type='number' placeholder='Enter price in SAR' value={price} 
+                onChange={(e) => setPrice(e.target.value)} min='0' step='0.01'
+                required />
             </div>
 
             <button

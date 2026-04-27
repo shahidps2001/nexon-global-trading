@@ -5,6 +5,7 @@ import axios from 'axios'
 import './AdminPages.css'
 
 function AddProduct() {
+  const [price, setPrice] = useState('')
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
   const [category, setCategory] = useState('')
@@ -23,7 +24,7 @@ function AddProduct() {
 
   const fetchCategories = async () => {
     try {
-      const res = await axios.get('https://nexon-global-trading-backend1.onrender.com/api/categories')
+      const res = await axios.get('http://localhost:5000/api/categories')
       setCategories(res.data)
     }
     catch(error) {
@@ -56,8 +57,9 @@ function AddProduct() {
         formData.append('description', description)
         formData.append('category', category)
         formData.append('image', image)
+        formData.append('price', price)
         await axios.post(
-          'https://nexon-global-trading-backend1.onrender.com/api/products',
+          'http://localhost:5000/api/products',
           formData,
           {
             headers: {
@@ -153,6 +155,15 @@ function AddProduct() {
                   )}
                 </label>
               </div>
+              
+              <div className='admin-form-field'>
+              <label>Price (SAR per piece) *</label>
+              <input type='number' placeholder='Enter price in SAR' value={price} onChange={(e) => setPrice(e.target.value)}
+
+              min='0' step='0.01' required  />
+            </div>
+                
+              
             </div>
 
             <button type='submit' className='admin-submit-btn' disabled={loading}>

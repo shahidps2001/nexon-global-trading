@@ -195,3 +195,41 @@
     display: none;
   }
 }
+
+
+/*MOBILE LAYOUT*/
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 7rem 1.5rem 4rem;
+    min-height: 100svh;
+  }
+  .hero-company {
+    font-size: 2.5rem;
+  }
+  .hero-branch {
+    font-size: 0.9rem;
+  }
+  .hero-desc {
+    font-size: 0.95rem;
+  }
+  .hero-btns {
+    flex-direction: column;
+  }
+  .hero-btns a {
+    text-align: center;
+  }
+  .hero-stats {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .hero-stat-divider {
+    display: none;
+  }
+  .hero-stat-num {
+    font-size: 1.8rem;
+  }
+  .hero-scroll {
+    display: none;
+  }
+}

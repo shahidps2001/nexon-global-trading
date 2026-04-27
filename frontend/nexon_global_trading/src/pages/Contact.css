@@ -223,3 +223,35 @@
     grid-template-columns: 1fr;
   }
 }
+
+/*MOBILELAYOUT */
+
+
+@media (max-width: 768px) {
+  .contact-banner {
+    padding: 3rem 1.5rem;
+  }
+  .contact-page-container {
+    padding: 2rem 1.5rem;
+  }
+  .contact-cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .contact-bottom {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .contact-map {
+    height: 280px;
+  }
+  .contact-page-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-cards {
+    grid-template-columns: 1fr;
+  }
+}

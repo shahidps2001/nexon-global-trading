@@ -176,4 +176,19 @@
   color: #8A9BB0;
 }
 
+/* MOBILEL LAYOUT */
+
+
+@media (max-width: 480px) {
+  .admin-login {
+    padding: 1rem;
+  }
+  .admin-login-card {
+    max-width: 100%;
+  }
+  .admin-login-form {
+    padding: 1.5rem 1.2rem;
+  }
+}
+
 

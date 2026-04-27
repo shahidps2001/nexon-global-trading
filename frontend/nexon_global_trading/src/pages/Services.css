@@ -186,3 +186,28 @@
     height: 200px;
   }
 }
+
+
+/* MOBILELAYOUT */
+
+@media (max-width: 768px) {
+  .services-banner {
+    padding: 3rem 1.5rem;
+  }
+  .services-page-container {
+    padding: 2rem 1.5rem;
+  }
+  .services-page-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .services-page-card-img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-page-grid {
+    grid-template-columns: 1fr;
+  }
+}

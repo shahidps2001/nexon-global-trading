@@ -1,22 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const multer = require("multer")
-const path = require("path");
+const { upload } = require('../config/cloudinary')
 const Product = require("../models/Product");
 const authMiddleware = require("../middleware/authMiddleware");
 
 //multer setup
 
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, 'uploads/')
-    },
-    filename: (req, file, cb) => {
-        cb(null, Date.now() + path.extname(file.originalname))
-    }
-})
 
-const upload = multer({ storage})
 
 //GET all products (public)
 router.get('/', async (req, res) => {
@@ -60,8 +50,9 @@ router.post('/', authMiddleware, upload.single('image'), async (req, res) => {
         const product = new Product({
             name: req.body.name,
             description: req.body.description,
-            image: req.file.filename,
-            category: req.body.category
+            image: req.file.path,
+            category: req.body.category,
+            price: req.body.price || 0
         })
         const saved = await product.save()
         res.status(201).json(saved)
@@ -78,10 +69,11 @@ router.put('/:id', authMiddleware, upload.single('image'), async (req, res) => {
         const updateData = {
             name: req.body.name,
             description: req.body.description,
-            category: req.body.category
+            category: req.body.category,
+            price: req.body.price
         }
         if ( req.file) {
-            updateData.image = req.file.filename
+            updateData.image = req.file.path
         }
         const updated = await Product.findByIdAndUpadate(
             req.params.id,

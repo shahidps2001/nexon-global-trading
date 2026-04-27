@@ -220,3 +220,37 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* MOBILE LAYOUT */
+
+
+@media (max-width: 768px) {
+  .about-page-banner {
+    padding: 3rem 1.5rem;
+  }
+  .about-page-container {
+    padding: 3rem 1.5rem;
+    gap: 3rem;
+  }
+  .about-page-section {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .about-page-mv {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .about-page-values-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .about-page-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-page-values-grid {
+    grid-template-columns: 1fr;
+  }
+}

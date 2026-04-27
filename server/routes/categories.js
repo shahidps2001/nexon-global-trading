@@ -1,22 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const multer = require("multer");
-const path = require("path");
+const { upload } = require('../config/cloudinary')
 const Category = require("../models/Category");
 const authMiddleware = require("../middleware/authMiddleware");
 
 //multer setup for image upload
 
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, 'uploads/') 
-    },
-    filename: (req, file, cb) => {
-        cb(null, Date.now() + path.extname(file.originalname))
-    }
-})
 
-const upload = multer({storage})
 
 //get all categories (public)
 
@@ -36,7 +26,7 @@ router.post('/', authMiddleware, upload.single('image'), async (req, res) => {
     try {
         const category = new Category({
             name: req.body.name,
-            image: req.file.filename
+            image: req.file.path
         })
         const saved = await category.save()
         res.status(201).json(saved)
@@ -52,7 +42,7 @@ router.put('/:id', authMiddleware, upload.single('image'), async (req, res) => {
     try {
         const updateData = { name: req.body.name }
         if (req.file) {
-            updateData.image = req.file.filename
+            updateData.image = req.file.path
         }
         const updated = await Category.findByIdAndUpdate(
             req.params.id,

@@ -236,3 +236,84 @@
   background: #C9A84C;
   margin-top: 0.5rem;
 }
+
+
+/* MOBILELAYOUT */
+
+@media (max-width: 768px) {
+  .products-banner {
+    padding: 3rem 1.5rem;
+  }
+  .products-page-container {
+    padding: 2rem 1.5rem;
+  }
+  .products-categories {
+    gap: 0.6rem;
+  }
+  .products-category-btn {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.75rem;
+  }
+  .products-category-btn img {
+    width: 22px;
+    height: 22px;
+  }
+  .products-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .product-card-img {
+    height: 150px;
+  }
+  .product-card-name {
+    font-size: 0.9rem;
+  }
+  .product-card-desc {
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.product-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(201, 168, 76, 0.1);
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.product-card-price {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #C9A84C;
+  letter-spacing: 0.05em;
+}
+
+.product-calc-btn {
+  padding: 0.4rem 0.8rem;
+  background: rgba(201, 168, 76, 0.1);
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: 2px;
+  color: #C9A84C;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.product-calc-btn:hover {
+  background: #C9A84C;
+  color: #0A1628;
+}

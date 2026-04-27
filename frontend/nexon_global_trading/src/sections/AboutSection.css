@@ -164,3 +164,34 @@
     gap: 1.5rem;
   }
 }
+
+/* LAYOUT MOBILE */
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 4rem 1.5rem;
+  }
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .about-exp-badge {
+    width: 90px;
+    height: 90px;
+    bottom: -1rem;
+    right: -0.5rem;
+  }
+  .about-exp-num {
+    font-size: 1.5rem;
+  }
+  .about-exp-text {
+    font-size: 0.45rem;
+  }
+  .about-values {
+    gap: 1.2rem;
+    justify-content: center;
+  }
+  .about-value {
+    min-width: 70px;
+  }
+}

@@ -124,3 +124,25 @@
         height: 350px;
     }
 }
+
+
+/* MOBILE LAYOUT */
+
+@media (max-width: 768px) {
+  .location-section {
+    padding: 4rem 1.5rem;
+  }
+  .location-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .location-map {
+    height: 280px;
+  }
+  .location-detail-item {
+    padding: 1rem;
+  }
+  .location-header {
+    margin-bottom: 2.5rem;
+  }
+}

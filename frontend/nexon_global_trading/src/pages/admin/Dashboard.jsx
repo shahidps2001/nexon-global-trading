@@ -48,6 +48,7 @@ function Dashboard() {
       title: 'Enquiries & Feedback',
       items: [
         {label: 'View Enquiries', path: '/admin/enquiries', icon: '📩'},
+        { label: 'Price Enquiries', path: '/admin/price-enquiries', icon: '🧮' },
         {label: 'View Feedback', path: '/admin/feedback', icon: '📝'},
       ]
     }

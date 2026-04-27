@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import './AdminPages.css'
 
-function ViewEnquiries() {
+function ViewPriceEnquiries() {
   const [enquiries, setEnquiries] = useState([])
   const [loading, setLoading] = useState(true)
   const navigate = useNavigate()
@@ -18,12 +18,14 @@ function ViewEnquiries() {
     try {
       const token = localStorage.getItem('adminToken')
       const res = await axios.get(
-        'http://localhost:5000/api/enquiry',
+        'http://localhost:5000/api/price-enquiry',
         { headers: { Authorization: `Bearer ${token}` } }
       )
+      // Make sure it's always an array
       setEnquiries(Array.isArray(res.data) ? res.data : [])
     } catch (error) {
       console.log(error)
+      setEnquiries([])
     }
     setLoading(false)
   }
@@ -33,12 +35,12 @@ function ViewEnquiries() {
     try {
       const token = localStorage.getItem('adminToken')
       await axios.delete(
-        `http://localhost:5000/api/enquiry/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/price-enquiry/${id}`,
         { headers: { Authorization: `Bearer ${token}` } }
       )
       fetchEnquiries()
     } catch (error) {
-      alert('Failed to delete enquiry')
+      alert('Failed to delete')
     }
   }
 
@@ -55,7 +57,8 @@ function ViewEnquiries() {
         <Link to='/admin/products/add' className='admin-sidebar-link'>➕ Add Product</Link>
         <Link to='/admin/services' className='admin-sidebar-link'>🔧 View Services</Link>
         <Link to='/admin/services/add' className='admin-sidebar-link'>➕ Add Service</Link>
-        <Link to='/admin/enquiries' className='admin-sidebar-link active'>✉️ View Enquiries</Link>
+        <Link to='/admin/enquiries' className='admin-sidebar-link'>✉️ View Enquiries</Link>
+        <Link to='/admin/price-enquiries' className='admin-sidebar-link active'>🧮 Price Enquiries</Link>
         <Link to='/admin/feedback' className='admin-sidebar-link'>💬 View Feedback</Link>
         <button className='admin-sidebar-logout' onClick={() => {
           localStorage.removeItem('adminToken')
@@ -65,18 +68,16 @@ function ViewEnquiries() {
 
       <div className='admin-page-main'>
         <div className='admin-page-header'>
-          <h1>View Enquiries</h1>
-          <div className='admin-count'>
-            Total: {enquiries.length}
-          </div>
+          <h1>Price Enquiries</h1>
+          <div className='admin-count'>Total: {enquiries.length}</div>
         </div>
 
         {loading ? (
           <div className='admin-loading'>Loading...</div>
         ) : enquiries.length === 0 ? (
           <div className='admin-empty'>
-            <div className='admin-empty-icon'>✉️</div>
-            <div className='admin-empty-text'>No enquiries yet</div>
+            <div className='admin-empty-icon'>🧮</div>
+            <div className='admin-empty-text'>No price enquiries yet</div>
           </div>
         ) : (
           <div className='admin-table-wrap'>
@@ -86,29 +87,37 @@ function ViewEnquiries() {
                   <th>Name</th>
                   <th>Email</th>
                   <th>Phone</th>
-                  <th>City</th>
-                  <th>Message</th>
+                  <th>Product</th>
+                  <th>Qty</th>
+                  <th>Unit Price</th>
+                  <th>Subtotal</th>
+                  <th>VAT 15%</th>
+                  <th>Total</th>
                   <th>Date</th>
                   <th>Action</th>
                 </tr>
               </thead>
               <tbody>
-                {enquiries.map(enquiry => (
-                  <tr key={enquiry._id}>
-                    <td>{enquiry.name}</td>
-                    <td>{enquiry.email}</td>
-                    <td>{enquiry.phone}</td>
-                    <td>{enquiry.city}</td>
-                    <td>{enquiry.message}</td>
-                    <td>
-                      {new Date(enquiry.createdAt).toLocaleDateString()}
+                {enquiries.map(enq => (
+                  <tr key={enq._id}>
+                    <td>{enq.name}</td>
+                    <td>{enq.email}</td>
+                    <td>{enq.phone}</td>
+                    <td>{enq.productName}</td>
+                    <td>{enq.quantity}</td>
+                    <td>SAR {enq.unitPrice.toFixed(2)}</td>
+                    <td>SAR {enq.subtotal.toFixed(2)}</td>
+                    <td>SAR {enq.vat.toFixed(2)}</td>
+                    <td style={{ color: '#C9A84C', fontWeight: 600 }}>
+                      SAR {enq.total.toFixed(2)}
                     </td>
+                    <td>{new Date(enq.createdAt).toLocaleDateString()}</td>
                     <td>
                       <button
                         className='admin-delete-btn'
-                        onClick={() => handleDelete(enquiry._id)}
+                        onClick={() => handleDelete(enq._id)}
                       >
-                        🗑️ Delete
+                        🗑️
                       </button>
                     </td>
                   </tr>
@@ -123,4 +132,4 @@ function ViewEnquiries() {
   )
 }
 
-export default ViewEnquiries
+export default ViewPriceEnquiries

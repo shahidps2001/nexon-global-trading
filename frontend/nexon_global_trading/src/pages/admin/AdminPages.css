@@ -525,3 +525,43 @@
   padding: 0.4rem 1rem;
   border-radius: 2px;
 }
+
+
+/* MOBILE LAYOUT */
+
+
+@media (max-width: 768px) {
+  .admin-page-sidebar {
+    display: none;
+  }
+  .admin-page-main {
+    margin-left: 0;
+    padding: 1.5rem;
+  }
+  .admin-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .admin-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .admin-page-header h1 {
+    font-size: 1.5rem;
+  }
+  .admin-table th,
+  .admin-table td {
+    padding: 0.6rem;
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-grid {
+    grid-template-columns: 1fr;
+  }
+  .admin-form {
+    padding: 1.2rem;
+  }
+}

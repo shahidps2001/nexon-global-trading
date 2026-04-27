@@ -161,3 +161,28 @@
   padding: 0 4rem;
 }
 
+/* MOBILE LAYOUT */
+
+
+@media (max-width: 768px) {
+  .services-section {
+    padding: 4rem 0;
+  }
+  .services-header {
+    padding: 0 1.5rem;
+  }
+  .service-card {
+    min-width: 230px;
+  }
+  .service-card-img {
+    height: 150px;
+  }
+  .services-footer {
+    padding: 0 1.5rem;
+  }
+  .services-fade-left,
+  .services-fade-right {
+    width: 60px;
+  }
+}
+

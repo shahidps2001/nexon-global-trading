@@ -21,6 +21,7 @@ import EditService from './pages/admin/EditService';
 import ViewEnquiries from './pages/admin/ViewEnquiries';
 import ViewFeedback from './pages/admin/ViewFeedback';
 import Footer from './components/Footer';
+import ViewPriceEnquiries from './pages/admin/ViewPriceEnquiries';
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
       <Route path='/admin/services/edit/:id' element={<EditService />} />
       <Route path='/admin/enquiries' element={<ViewEnquiries />} />
       <Route path='/admin/feedback' element={<ViewFeedback />} />
+      <Route path='/admin/price-enquiries' element={<ViewPriceEnquiries />} />
     </Routes>
     <Footer />
     </BrowserRouter>
