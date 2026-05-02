@@ -52,7 +52,7 @@ function Services() {
 
                 <div className='services-page-card-img'>
                   <img
-                    src={product.image}
+                    src={service.image}
                     alt={service.name}
                   />
                 </div>

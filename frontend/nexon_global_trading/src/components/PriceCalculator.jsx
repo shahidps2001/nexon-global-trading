@@ -29,7 +29,7 @@ function PriceCalculator({ product, onClose }) {
     setLoading(true)
     try {
       await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/price-enquiry`,
+        `http://localhost:5000/api/price-enquiry`,
         {
           name: formData.name,
           email: formData.email,
@@ -83,7 +83,7 @@ function PriceCalculator({ product, onClose }) {
                 {/* PRODUCT INFO */}
                 <div className='calc-product-info'>
                   <img
-                    src={`${import.meta.env.VITE_API_URL}/uploads/${product.image}`}
+                    src={`http://localhost:5000/uploads/${product.image}`}
                     alt={product.name}
                     className='calc-product-img'
                   />

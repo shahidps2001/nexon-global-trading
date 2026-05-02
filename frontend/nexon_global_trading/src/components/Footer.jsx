@@ -33,9 +33,9 @@ function Footer() {
           <div className='footer-col-title'>Contact</div>
           <ul>
             <li>📍 Ankal Trading Est. Al Jubail</li>
-            <li>📞 +966 XX XXX XXXX</li>
+            <li>📞 +966 510837046</li>
             <li>✉ info@nexonglobaltrading.com</li>
-            <li>🕐 Sun – Thu: 8AM – 6PM</li>
+            <li>🕐 Sat – Thu: 9AM – 5PM</li>
           </ul>
         </div>
 

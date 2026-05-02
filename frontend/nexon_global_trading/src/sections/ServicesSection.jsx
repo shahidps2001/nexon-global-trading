@@ -75,7 +75,7 @@ function ServicesSection() {
 
                 <div className='services-card-img'>
 
-                  <img src={`https://nexon-global-trading-backend1.onrender.com/uploads/${service.image}`} alt={service.name} />
+                  <img src={service.image} alt={service.name} />
 
                 </div>
                 <div className='service-card-info'>

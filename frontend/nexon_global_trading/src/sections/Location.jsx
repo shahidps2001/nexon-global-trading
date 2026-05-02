@@ -49,7 +49,7 @@ function Location() {
 
               <div className='location-detail-label'>Phone</div>
 
-              <div className='location-detail-value'>+996 XX XXX XXXX</div>
+              <div className='location-detail-value'>+966 510837046</div>
             </div>
           </div>
         </div>
@@ -75,8 +75,8 @@ function Location() {
             <div className='location-detail-label'>Working Hours</div>
 
             <div className='location-detail-value'>
-              Sunday - Thursday <br />
-              8: 00 AM - 6: 00 PM
+              Saturday - Thursday <br />
+              9: 00 AM - 5: 00 PM
             </div>
           </div>
         </div>

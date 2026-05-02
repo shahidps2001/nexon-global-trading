@@ -33,7 +33,7 @@ function Contact() {
             <div className='contact-card-icon'>📞</div>
             <div className='contact-card-label'>Phone</div>
             <div className='contact-card-value'>
-              +966 XX XXX XXXX
+              +966 510837046
             </div>
           </div>
           <div className='contact-card'>
@@ -47,8 +47,8 @@ function Contact() {
             <div className='contact-card-icon'>🕐</div>
             <div className='contact-card-label'>Working Hours</div>
             <div className='contact-card-value'>
-              Sun – Thu<br />
-              8:00 AM – 6:00 PM
+              Sat – Thu<br />
+              9:00 AM – 5:00 PM
             </div>
           </div>
         </div>
@@ -97,7 +97,7 @@ function Contact() {
               </div>
               <div className='contact-branch-detail'>
                 <span className='detail-label'>Phone</span>
-                <span className='detail-value'>+966 XX XXX XXXX</span>
+                <span className='detail-value'>+966 510837046</span>
               </div>
               <div className='contact-branch-detail'>
                 <span className='detail-label'>Email</span>
@@ -105,7 +105,7 @@ function Contact() {
               </div>
               <div className='contact-branch-detail'>
                 <span className='detail-label'>Hours</span>
-                <span className='detail-value'>Sun–Thu 8AM–6PM</span>
+                <span className='detail-value'>Sat–Thu 9AM–5PM</span>
               </div>
             </div>
           </div>

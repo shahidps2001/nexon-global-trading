@@ -55,6 +55,7 @@ function ViewFeedback() {
         <Link to='/admin/products/add' className='admin-sidebar-link'>➕ Add Product</Link>
         <Link to='/admin/services' className='admin-sidebar-link'>🔧 View Services</Link>
         <Link to='/admin/services/add' className='admin-sidebar-link'>➕ Add Service</Link>
+        <Link to='/admin/price-enquiries' className='admin-sidebar-link'>🧮 Price Enquiries</Link>
         <Link to='/admin/enquiries' className='admin-sidebar-link'>✉️ View Enquiries</Link>
         <Link to='/admin/feedback' className='admin-sidebar-link active'>💬 View Feedback</Link>
         <button className='admin-sidebar-logout' onClick={() => {
@@ -66,6 +67,10 @@ function ViewFeedback() {
       <div className='admin-page-main'>
         <div className='admin-page-header'>
           <h1>View Feedback</h1>
+
+          <button className='admin-back-button' onClick={() => navigate('/admin/dashboard')}>
+  ← Back
+</button>
           <div className='admin-count'>
             Total: {feedback.length}
           </div>

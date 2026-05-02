@@ -35,7 +35,7 @@ function ViewPriceEnquiries() {
     try {
       const token = localStorage.getItem('adminToken')
       await axios.delete(
-        `${import.meta.env.VITE_API_URL}/api/price-enquiry/${id}`,
+        `http://localhost:5000/api/price-enquiry/${id}`,
         { headers: { Authorization: `Bearer ${token}` } }
       )
       fetchEnquiries()
@@ -69,6 +69,9 @@ function ViewPriceEnquiries() {
       <div className='admin-page-main'>
         <div className='admin-page-header'>
           <h1>Price Enquiries</h1>
+          <button className='admin-back-button' onClick={() => navigate('/admin/dashboard')}>
+  ← Back
+</button>
           <div className='admin-count'>Total: {enquiries.length}</div>
         </div>
 

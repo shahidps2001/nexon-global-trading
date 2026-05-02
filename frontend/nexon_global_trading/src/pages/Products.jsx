@@ -91,7 +91,7 @@ function Products() {
                   onClick={() => handleCategoryClick(category._id)}
                 >
                   <img
-                    src={product.image}
+                    src={category.image}
                     alt={category.name}
                   />
                   <span>{category.name}</span>

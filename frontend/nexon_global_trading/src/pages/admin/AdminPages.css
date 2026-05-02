@@ -565,3 +565,25 @@
     padding: 1.2rem;
   }
 }
+
+.admin-back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  background: rgba(201, 168, 76, 0.08);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 2px;
+  color: #C9A84C;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.admin-back-button:hover {
+  background: rgba(201, 168, 76, 0.15);
+  border-color: #C9A84C;
+}

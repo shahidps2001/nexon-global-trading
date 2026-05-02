@@ -36,7 +36,7 @@ function About() {
             <p>
               Nexon Global Trading was founded with a singular vision -
               to become the Gulf's regions most trusted building materials
-              supplier. Over the past 15yeasr, we have grown from a 
+              supplier. we have grown from a 
               small trading comapany into a regional powerhouse with
               branches across the Gulf.
             </p>

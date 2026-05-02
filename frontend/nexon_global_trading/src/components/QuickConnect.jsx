@@ -23,7 +23,7 @@ function QuickConnect() {
     setLoading(true)
     try {
       await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/enquiry`,
+        `http://localhost:5000/api/enquiry`,
         formData
       )
       setSuccess(true)

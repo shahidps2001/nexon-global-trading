@@ -78,6 +78,7 @@ function AddService() {
         <Link to='/admin/services/add' className='admin-sidebar-link active'>
           ➕ Add Service
         </Link>
+        <Link to='/admin/price-enquiries' className='admin-sidebar-link'>🧮 Price Enquiries</Link>
         <Link to='/admin/enquiries' className='admin-sidebar-link'>
           ✉️ View Enquiries
         </Link>
@@ -99,6 +100,10 @@ function AddService() {
 
         <div className='admin-page-header'>
           <h1>Add Service</h1>
+
+          <button className='admin-back-button' onClick={() => navigate('/admin/dashboard')}>
+  ← Back
+</button>
           <Link to='/admin/services' className='admin-back-btn'>
             ← Back to Services
           </Link>
