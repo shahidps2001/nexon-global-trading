@@ -83,7 +83,7 @@ function PriceCalculator({ product, onClose }) {
                 {/* PRODUCT INFO */}
                 <div className='calc-product-info'>
                   <img
-                    src={`http://localhost:5000/uploads/${product.image}`}
+                    src={product.image}
                     alt={product.name}
                     className='calc-product-img'
                   />

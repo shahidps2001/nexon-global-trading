@@ -97,7 +97,7 @@ function ProductHighlights() {
               >
                 <div className='ph-card-img'>
                   <img
-                    src={`https://nexon-global-trading-backend1.onrender.com/uploads/${product.image}`}
+                    src={product.image}
                     alt={product.name}
                   />
                 </div>
