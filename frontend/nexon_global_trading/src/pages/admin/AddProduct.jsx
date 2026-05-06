@@ -24,7 +24,7 @@ function AddProduct() {
 
   const fetchCategories = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/categories')
+      const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/categories`)
       setCategories(res.data)
     }
     catch(error) {
@@ -59,7 +59,7 @@ function AddProduct() {
         formData.append('image', image)
         formData.append('price', price)
         await axios.post(
-          'http://localhost:5000/api/products',
+          `${import.meta.env.VITE_BASE_URL}/api/products`,
           formData,
           {
             headers: {

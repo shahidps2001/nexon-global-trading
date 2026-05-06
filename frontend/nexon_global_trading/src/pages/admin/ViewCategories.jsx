@@ -16,7 +16,7 @@ function ViewCategories() {
 
   const fetchCategories = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/categories')
+      const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/categories`)
       setCategories(Array.isArray(res.data) ? res.data : [])
     } catch (error) {
       console.log(error)
@@ -28,7 +28,7 @@ function ViewCategories() {
     if (!window.confirm('Are you sure you want to delete this category?')) return
     try {
       const token = localStorage.getItem('adminToken')
-      await axios.delete(`http://localhost:5000/api/categories/${id}`, {
+      await axios.delete(`${import.meta.env.VITE_BASE_URL}/api/categories/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       })
       fetchCategories()

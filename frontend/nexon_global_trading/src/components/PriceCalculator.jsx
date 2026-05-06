@@ -29,7 +29,7 @@ function PriceCalculator({ product, onClose }) {
     setLoading(true)
     try {
       await axios.post(
-        `http://localhost:5000/api/price-enquiry`,
+        `${import.meta.env.VITE_BASE_URL}/api/price-enquiry`,
         {
           name: formData.name,
           email: formData.email,

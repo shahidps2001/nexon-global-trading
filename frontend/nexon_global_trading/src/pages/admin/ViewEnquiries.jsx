@@ -18,7 +18,7 @@ function ViewEnquiries() {
     try {
       const token = localStorage.getItem('adminToken')
       const res = await axios.get(
-        'http://localhost:5000/api/enquiry',
+        `${import.meta.env.VITE_BASE_URL}/api/enquiry`,
         { headers: { Authorization: `Bearer ${token}` } }
       )
       setEnquiries(Array.isArray(res.data) ? res.data : [])
@@ -33,7 +33,7 @@ function ViewEnquiries() {
     try {
       const token = localStorage.getItem('adminToken')
       await axios.delete(
-        `http://localhost:5000/api/enquiry/${id}`,
+        `${import.meta.env.VITE_BASE_URL}/api/enquiry/${id}`,
         { headers: { Authorization: `Bearer ${token}` } }
       )
       fetchEnquiries()

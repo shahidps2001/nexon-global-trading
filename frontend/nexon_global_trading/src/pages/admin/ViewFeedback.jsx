@@ -18,7 +18,7 @@ function ViewFeedback() {
     try {
       const token = localStorage.getItem('adminToken')
       const res = await axios.get(
-        'http://localhost:5000/api/feedback',
+        `${import.meta.env.VITE_BASE_URL}/api/feedback`,
         { headers: { Authorization: `Bearer ${token}` } }
       )
       setFeedback(Array.isArray(res.data) ? res.data : [])
@@ -33,7 +33,7 @@ function ViewFeedback() {
     try {
       const token = localStorage.getItem('adminToken')
       await axios.delete(
-        `http://localhost:5000/api/feedback/${id}`,
+        `${import.meta.env.VITE_BASE_URL}/api/feedback/${id}`,
         { headers: { Authorization: `Bearer ${token}` } }
       )
       fetchFeedback()

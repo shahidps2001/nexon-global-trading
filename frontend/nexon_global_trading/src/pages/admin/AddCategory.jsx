@@ -30,7 +30,7 @@ function AddCategory() {
       const formData = new FormData()
       formData.append('name', name)
       formData.append('image', image)
-      await axios.post('http://localhost:5000/api/categories', formData, {
+      await axios.post(`${import.meta.env.VITE_BASE_URL}/api/categories`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-type': 'multipart/form-data'

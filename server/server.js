@@ -18,7 +18,7 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'https://nexon-global-trading-frontend1.onrender.com'
+    'https://nexon-global-trading-backend2.onrender.com'
   ],
   credentials: true
 }))

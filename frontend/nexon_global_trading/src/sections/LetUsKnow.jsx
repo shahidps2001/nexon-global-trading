@@ -21,7 +21,7 @@ function LetUsKnow() {
 
 
     try {
-      await axios.post('http://localhost:5000/api/feedback', formData)
+      await axios.post(`${import.meta.env.VITE_BASE_URL}/api/feedback`, formData)
       setSuccess(true)
       setFormData({ email: '', message: '' })
         setTimeout(() => setSuccess(false), 4000)

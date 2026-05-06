@@ -18,7 +18,7 @@ function ViewPriceEnquiries() {
     try {
       const token = localStorage.getItem('adminToken')
       const res = await axios.get(
-        'http://localhost:5000/api/price-enquiry',
+        `${import.meta.env.VITE_BASE_URL}/api/price-enquiry`,
         { headers: { Authorization: `Bearer ${token}` } }
       )
       // Make sure it's always an array
@@ -35,7 +35,7 @@ function ViewPriceEnquiries() {
     try {
       const token = localStorage.getItem('adminToken')
       await axios.delete(
-        `http://localhost:5000/api/price-enquiry/${id}`,
+        `${import.meta.env.VITE_BASE_URL}/api/price-enquiry/${id}`,
         { headers: { Authorization: `Bearer ${token}` } }
       )
       fetchEnquiries()

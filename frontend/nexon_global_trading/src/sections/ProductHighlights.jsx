@@ -13,7 +13,7 @@ function ProductHighlights() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/products')
+        const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/products`)
         setProducts(Array.isArray(res.data) ? res.data : [])
       } catch (error) {
         console.log(error)

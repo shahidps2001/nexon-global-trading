@@ -15,7 +15,7 @@ function Products() {
     const fetchCategories = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/categories`
+          `${import.meta.env.VITE_BASE_URL}/api/categories`
         )
         setCategories(Array.isArray(res.data) ? res.data : [])
         if (res.data.length > 0) {
@@ -35,7 +35,7 @@ function Products() {
       setLoadingProds(true)
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/products/category/${selectedCategory}`
+          `${import.meta.env.VITE_BASE_URL}/api/products/category/${selectedCategory}`
         )
         setProducts(res.data)
       } catch (error) {

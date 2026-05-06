@@ -37,7 +37,7 @@ function AddService() {
       formData.append('description', description)
       formData.append('image', image)
       await axios.post(
-        'http://localhost:5000/api/services',
+        `${import.meta.env.VITE_BASE_URL}/api/services`,
         formData,
         {
           headers: {

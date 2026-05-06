@@ -22,11 +22,11 @@ function EditService() {
   const fetchService = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/services/${id}`
+        `${import.meta.env.VITE_BASE_URL}/api/services/${id}`
       )
       setName(res.data.name)
       setDescription(res.data.description)
-      setPreview(`http://localhost:5000/uploads/${res.data.image}`)
+      setPreview(`${import.meta.env.VITE_BASE_URL}/uploads/${res.data.image}`)
     } catch (error) {
       console.log(error)
     }
@@ -48,7 +48,7 @@ function EditService() {
       formData.append('description', description)
       if (image) formData.append('image', image)
       await axios.put(
-        `http://localhost:5000/api/services/${id}`,
+        `${import.meta.env.VITE_BASE_URL}/api/services/${id}`,
         formData,
         {
           headers: {

@@ -25,8 +25,8 @@ function EditProduct() {
   const fetchData = async () => {
     try {
       const [catRes, prodRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/categories'),
-        axios.get(`http://localhost:5000/api/products/${id}`)
+        axios.get(`${import.meta.env.VITE_BASE_URL}/api/categories`),
+        axios.get(`${import.meta.env.VITE_BASE_URL}/api/products/${id}`)
       ])
       setCategories(catRes.data)
       const product = prodRes.data
@@ -34,7 +34,7 @@ function EditProduct() {
       setDescription(product.description)
       setCategory(product.category._id)
       setPrice(product.price || 0)
-      setPreview(`http://localhost:5000/uploads/${product.image}`)
+      setPreview(`${import.meta.env.VITE_BASE_URL}/uploads/${product.image}`)
     } catch (error) {
       console.log(error)
     }
@@ -58,7 +58,7 @@ function EditProduct() {
       formData.append('price', price)
       if (image) formData.append('image', image)
       await axios.put(
-        `http://localhost:5000/api/products/${id}`,
+        `${import.meta.env.VITE_BASE_URL}/api/products/${id}`,
         formData,
         {
           headers: {

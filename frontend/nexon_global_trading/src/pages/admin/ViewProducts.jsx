@@ -24,7 +24,7 @@ function ViewProducts() {
 
   const fetchCategories = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/categories')
+      const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/categories`)
       setCategories(Array.isArray(res.data) ? res.data : [])
       if (res.data.length > 0) {
         setSelectedCategory(res.data[0]._id)
@@ -38,7 +38,7 @@ function ViewProducts() {
   const fetchProducts = async (categoryId) => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/products/category/${categoryId}`
+        `${import.meta.env.VITE_BASE_URL}/api/products/category/${categoryId}`
       )
       setProducts(Array.isArray(res.data) ? res.data : [])
     } catch (error) {
@@ -51,7 +51,7 @@ function ViewProducts() {
     try {
       const token = localStorage.getItem('adminToken')
       await axios.delete(
-        `http://localhost:5000/api/products/${id}`,
+        `${import.meta.env.VITE_BASE_URL}/api/products/${id}`,
         { headers: { Authorization: `Bearer ${token}` } }
       )
       fetchProducts(selectedCategory)
