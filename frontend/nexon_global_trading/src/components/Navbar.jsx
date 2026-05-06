@@ -35,7 +35,7 @@ function Navbar() {
         {/* LOGO */}
 <Link to='/' className='navbar-logo'>
   <img
-    src='/src/assets/NEXONLOGO.jpg'
+    src='/NEXONLOGO.jpg'
     alt='Nexon Global Trading'
     className='navbar-logo-img'
   />

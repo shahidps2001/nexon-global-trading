@@ -48,7 +48,7 @@ function Hero() {
             <div className='hero-ring hero-ring-3'></div>
             <div className='hero-logo-circle'>
               <img
-                src='/src/assets/NEXONLOGO.jpg'
+                src='/NEXONLOGO.jpg'
                 alt='Nexon Global Trading'
                 className='hero-logo-img'
               />
