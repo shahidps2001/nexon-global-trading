@@ -18,7 +18,8 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'https://nexon-global-trading1.vercel.app'
+    'https://nexon-global-trading1.vercel.app',
+    'https://nxglobaltrade.com'
   ],
   credentials: true
 }))
