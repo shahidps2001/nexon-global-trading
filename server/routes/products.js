@@ -75,7 +75,7 @@ router.put('/:id', authMiddleware, upload.single('image'), async (req, res) => {
         if ( req.file) {
             updateData.image = req.file.path
         }
-        const updated = await Product.findByIdAndUpadate(
+        const updated = await Product.findByIdAndUpdate(
             req.params.id,
             updateData,
             { new: true}
