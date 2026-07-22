@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 import './QuickConnect.css'
 
@@ -13,6 +13,22 @@ function QuickConnect() {
     city: '',
     message: ''
   })
+
+  // Lets other components (like the "Get Quote" button on product cards)
+  // open this panel and pre-fill the message, without needing to lift
+  // this component's state up into a parent/context.
+  useEffect(() => {
+    const handleOpenQuickConnect = (e) => {
+      setFormData((prev) => ({
+        ...prev,
+        message: e.detail?.message || prev.message
+      }))
+      setIsOpen(true)
+    }
+    window.addEventListener('openQuickConnect', handleOpenQuickConnect)
+    return () =>
+      window.removeEventListener('openQuickConnect', handleOpenQuickConnect)
+  }, [])
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })

@@ -317,3 +317,54 @@
   background: #C9A84C;
   color: #0A1628;
 }
+
+.product-action-btns {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+
+.product-quote-btn {
+  padding: 0.4rem 0.8rem;
+  background: rgba(201, 168, 76, 0.1);
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: 2px;
+  color: #C9A84C;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.product-quote-btn:hover {
+  background: #C9A84C;
+  color: #0A1628;
+}
+
+.product-whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.8rem;
+  background: #25D366;
+  border: 1px solid #25D366;
+  border-radius: 2px;
+  color: #fff;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.product-whatsapp-btn:hover {
+  background: #1ebe57;
+  border-color: #1ebe57;
+}
