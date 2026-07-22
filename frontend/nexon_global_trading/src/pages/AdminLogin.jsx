@@ -55,7 +55,7 @@ function AdminLogin() {
         </div>
 
         { /* FORM */ }
-        <form className='admin-login-title' onSubmit={handleSubmit}>
+        <form className='admin-login-title' onSubmit={handleSubmit} autoComplete='off'>
 
           <div className='admin-login-title'>Sign In</div>
           <div className='admin-login-desc'>
@@ -68,22 +68,34 @@ function AdminLogin() {
             </div>
           )}
 
+          {/* Hidden dummy fields to absorb Chrome's autofill */}
+          <input type='text' name='fake-username' style={{ display: 'none' }} />
+          <input type='password' name='fake-password' style={{ display: 'none' }} />
 
           <div className='admin-login-field'>
             <label>Username</label>
-            <input type='text' name='username' 
-            placeholder='Enter username' 
-            value={formData.username}
-            onChange={handleChange} 
-            required />
+            <input 
+              type='text' 
+              name='username' 
+              placeholder='Enter username' 
+              value={formData.username}
+              onChange={handleChange} 
+              autoComplete='new-password'
+              required 
+            />
           </div>
 
           <div className='admin-login-field'>
             <label>Password</label>
-            <input type='password' name='password' placeholder='Enter password'
-            value={formData.password} 
-            onChange={handleChange} 
-            required />
+            <input 
+              type='password' 
+              name='password' 
+              placeholder='Enter password'
+              value={formData.password} 
+              onChange={handleChange} 
+              autoComplete="new-password"
+              required 
+            />
           </div>
 
           <button type='submit' className='admin-login-btn' disabled={loading}>
