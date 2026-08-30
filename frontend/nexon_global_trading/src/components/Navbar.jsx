@@ -64,6 +64,11 @@ function Navbar() {
             </Link>
           </li>
           <li>
+            <Link to='/our-clients' className={location.pathname === '/our-clients' ? 'active' : ''}>
+              Our Clients
+            </Link>
+          </li>
+          <li>
             <Link to='/contact' className={location.pathname === '/contact' ? 'active' : ''}>
               Contact Us
             </Link>
@@ -96,6 +101,7 @@ function Navbar() {
         <Link to='/products' onClick={() => setMenuOpen(false)}>Products</Link>
         <Link to='/services' onClick={() => setMenuOpen(false)}>Services</Link>
         <Link to='/about' onClick={() => setMenuOpen(false)}>About</Link>
+        <Link to='/our-clients' onClick={() => setMenuOpen(false)}>Our Clients</Link>
         <Link to='/contact' onClick={() => setMenuOpen(false)}>Contact Us</Link>
         <Link to='/manage' onClick={() => setMenuOpen(false)}>Manage</Link>
       </div>

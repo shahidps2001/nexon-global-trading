@@ -22,6 +22,7 @@ import ViewEnquiries from './pages/admin/ViewEnquiries';
 import ViewFeedback from './pages/admin/ViewFeedback';
 import Footer from './components/Footer';
 import ViewPriceEnquiries from './pages/admin/ViewPriceEnquiries';
+import OurClients from './pages/OurClients';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
       <Route path='/products' element={<Products />} />
       <Route path='/services' element={<Services />} />
       <Route path='/about' element={<About />} />
+      <Route path='/our-clients' element={<OurClients />} />
       <Route path='/contact' element={<Contact />} />
 
       {/* ADmin Routes */}

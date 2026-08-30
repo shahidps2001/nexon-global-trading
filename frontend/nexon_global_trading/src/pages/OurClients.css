@@ -1,0 +1,289 @@
+.clients-page {
+  padding-top: 80px;
+}
+
+/* BANNER */
+.clients-page-banner {
+  background: linear-gradient(
+    135deg,
+    #0A1628 0%,
+    #112240 50%,
+    #0A1628 100%
+  );
+  padding: 5rem 4rem;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+}
+
+.clients-page-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  background-image: repeating-linear-gradient(
+    45deg,
+    #C9A84C 0,
+    #C9A84C 1px,
+    transparent 0,
+    transparent 50%
+  );
+  background-size: 30px 30px;
+}
+
+.clients-page-banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.clients-page-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  color: #FAFAF8;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.clients-page-title span {
+  color: #C9A84C;
+}
+
+.clients-page-subtitle {
+  max-width: 700px;
+  font-size: 0.98rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #8A9BB0;
+  margin-top: 1.2rem;
+}
+
+/* CONTAINER */
+.clients-page-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+.clients-page-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #FAFAF8;
+  margin-bottom: 1.5rem;
+}
+
+.clients-page-heading.center {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* FEATURED PARTNER */
+.clients-partner-section {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 4rem;
+  align-items: center;
+  background: #112240;
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-radius: 6px;
+  padding: 3rem;
+}
+
+.clients-partner-logo-wrap {
+  background: #FAFAF8;
+  border-radius: 4px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clients-partner-logo {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.clients-partner-text p {
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.9;
+  color: #8A9BB0;
+  margin-bottom: 1.2rem;
+}
+
+.clients-partner-text p strong {
+  color: #E8EAF0;
+  font-weight: 500;
+}
+
+/* CATALOG */
+.clients-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.clients-catalog-card {
+  background: #112240;
+  border: 1px solid rgba(201, 168, 76, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.clients-catalog-card:hover {
+  border-color: rgba(201, 168, 76, 0.3);
+  transform: translateY(-4px);
+}
+
+.clients-catalog-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  background: #FAFAF8;
+}
+
+.clients-catalog-caption {
+  padding: 1.5rem 1.75rem;
+}
+
+.clients-catalog-caption h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #C9A84C;
+  margin-bottom: 0.6rem;
+}
+
+.clients-catalog-caption p {
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #8A9BB0;
+}
+
+/* TRUSTED BY */
+.clients-trusted-intro {
+  max-width: 750px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #8A9BB0;
+}
+
+.clients-trusted-logo-wrap {
+  background: #FAFAF8;
+  border-radius: 6px;
+  padding: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clients-trusted-logo-img {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .clients-page-banner {
+    padding: 4rem 2rem;
+  }
+  .clients-page-container {
+    padding: 4rem 2rem;
+    gap: 4rem;
+  }
+  .clients-partner-section {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  .clients-catalog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .clients-page-banner {
+    padding: 3rem 1.5rem;
+  }
+  .clients-page-container {
+    padding: 3rem 1.5rem;
+    gap: 3rem;
+  }
+  .clients-page-title {
+    font-size: 2rem;
+  }
+  .clients-catalog-card img {
+    height: 220px;
+  }
+  .clients-trusted-logo-wrap {
+    padding: 1.5rem;
+  }
+}
+
+
+/*---------------------------------------------------------------------------------------------------------------*/
+
+
+/* PARTNERSHIP IN ACTION */
+.clients-visit-intro {
+  max-width: 750px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #8A9BB0;
+}
+
+.clients-visit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.clients-visit-card {
+  background: #112240;
+  border: 1px solid rgba(201, 168, 76, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.clients-visit-card:hover {
+  border-color: rgba(201, 168, 76, 0.3);
+  transform: translateY(-4px);
+}
+
+.clients-visit-card img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  display: block;
+}
+
+.clients-visit-caption {
+  padding: 1.25rem 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #8A9BB0;
+  text-align: center;
+}
