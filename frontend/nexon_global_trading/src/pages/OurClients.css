@@ -200,6 +200,12 @@
   object-fit: contain;
 }
 
+/*-------------------------------*/
+/*TRUSTED ARABIAN ARROW*/
+.clients-trusted-section1{
+  margin: 40px 0;
+}
+
 /* RESPONSIVE */
 @media (max-width: 1024px) {
   .clients-page-banner {
@@ -286,4 +292,14 @@
   line-height: 1.7;
   color: #8A9BB0;
   text-align: center;
+}
+
+
+/*---------------------------------------------------------*/
+/*ARABIAN ARROW SECTION*/
+
+.clients-partner-divider {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
 }
